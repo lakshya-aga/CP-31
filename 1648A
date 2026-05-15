@@ -1,0 +1,56 @@
+#include <iostream>
+#include <vector>
+#include <unordered_map>
+#include <algorithm>
+using namespace std;
+
+int main(){
+    long long n, m;
+    cin>>n>>m;
+    unordered_map<long long, vector<long long>> x;
+    unordered_map<long long, vector<long long>> y;
+    for(long long i=1; i<=n; i++){
+    for(long long j=1; j<=m; j++){
+        long long color;
+        cin>>color;
+        x[color].push_back(i);
+        y[color].push_back(j);
+        }
+    }
+    long long ans = 0;
+    for(auto i: x){
+        auto coords = i.second;
+        // cout<<"============"<<endl;
+        // cout<<i.first<<endl;
+        // for(auto z: i.second){
+        //     cout<<z<<",";
+        // }
+        // cout<<endl;
+        sort(coords.begin(), coords.end());
+        for(long long j=coords.size()-1, pos=0; j>=0; j--, pos++){
+            ans += coords[pos]*(pos);
+            ans -= coords[pos]*j;
+        }
+        // cout<<ans<<endl;
+    }
+    // cout<<"START Y"<<endl;
+    for(auto i: y){
+        auto coords = i.second;
+        // cout<<"============"<<endl;
+        // cout<<i.first<<endl;
+        // for(auto z: i.second){
+        //     cout<<z<<",";
+        // }
+        // cout<<endl;
+        sort(coords.begin(), coords.end());
+        for(long long j=coords.size()-1, pos=0; j>=0; j--, pos++){
+            ans += coords[pos]*pos;
+            ans -= coords[pos]*j;
+        }
+        // cout<<ans<<endl;
+        
+    }
+
+    cout<<ans<<endl;
+}
+   
