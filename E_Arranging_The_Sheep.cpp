@@ -2,6 +2,8 @@
 #include <vector>
 #include <unordered_map>
 #include <string>
+#include <numeric>
+#include <algorithm>
 using namespace std;
 
 int main(){
@@ -50,7 +52,7 @@ int main(){
         }
         reverse(cost_right.begin(), cost_right.end());
         cost_right.push_back(0);
-        long long ans=1<<30;
+        long long ans=cost_right[0];
         for(long long i=0; i<n; i++){
             ans = min(ans, cost_left[i]+cost_right[i+1]);
         }
