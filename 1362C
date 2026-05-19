@@ -1,0 +1,17 @@
+#include <iostream>
+using namespace std;
+int main(){
+    int t;
+    cin>>t;
+    while(t--){
+        long long n;
+        cin>>n;
+        long long ans = 0;
+        long long curr=1;
+        for(int i=0; i<64; i++){
+            ans+= (n/curr);
+            curr*=2;
+        }
+        cout<<ans<<endl;;
+    }
+}
