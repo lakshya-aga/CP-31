@@ -1,0 +1,35 @@
+#include<iostream>
+#include<vector>
+#include<unordered_map>
+#include<algorithm>
+using namespace std;
+int main(){
+    long long q;
+    cin>>q;
+    while(q--){
+        long long n;
+        cin>>n;
+        vector<long long> arr(n+1);
+        vector<long long> freq(n+1, 0);
+        for(long long i=1; i<=n; i++)
+        {
+            cin>>arr[i];
+            freq[arr[i]]++;
+        }
+        sort(freq.begin(), freq.end(), greater<long long>());
+        long long ans = 0;
+        // for(auto i: freq){
+        //     cout<<i<<" ";
+        // }
+        // cout<<endl;
+        for(long long i=0; i<=n; i++){
+            if(i!=0 && freq[i]>=freq[i-1])
+            freq[i]=freq[i-1]-1;
+            if(freq[i]<=0){
+                break;
+            }
+            ans+=freq[i];
+        }
+        cout<<ans<<endl;
+    }
+}
