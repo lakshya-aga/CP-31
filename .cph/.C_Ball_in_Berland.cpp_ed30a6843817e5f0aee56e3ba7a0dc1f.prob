@@ -1,1 +1,0 @@
-{"name":"C. Ball in Berland","url":"https://codeforces.com/contest/1475/problem/C","interactive":false,"memoryLimit":0,"timeLimit":3000,"group":"Codeforces - Codeforces Round 697 (Div. 3)","tests":[{"id":1778985166248,"input":"3\n3 4 4\n1 1 2 3\n2 3 2 4\n1 1 1\n1\n1\n2 2 4\n1 1 2 2\n1 2 1 2\n","output":"4\n0\n2\n"}],"srcPath":"/Users/lakshya/Desktop/CP-31/C_Ball_in_Berland.cpp"}
