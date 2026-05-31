@@ -1,0 +1,5 @@
+.cph
+.vscode
+*.bin
+// anything that doe not end in .cpp
+*.o
